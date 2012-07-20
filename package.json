@@ -1,0 +1,21 @@
+{
+    "name": "yogi",
+    "description": "YUI Or Gallery Interface (CLI to YUI and Gallery development)",
+    "version": "0.0.1",
+    "bin": {
+        "yogi": "./bin/yogi.js"
+    },
+    "dependencies": {
+        "colors": "*",
+        "request": "*",
+        "nopt": "1",
+        "mkdirp": "~0.3.3",
+        "osenv": "*"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/vows ./tests/*.js"
+    },
+    "devDependencies": {
+        "vows": "*"
+    }
+}
