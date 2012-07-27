@@ -1,0 +1,22 @@
+{
+    "projectName": "YUI 3 Gallery",
+
+    "apiDocs": "http://yuilibrary.com/yui/docs/api",
+
+    "yuiBuildUrl"     : "build",
+    "yuiLocalBuildUrl": "build",
+    "yuiVersion"      : "3.5.1",
+    "yuiSeedUrl"      : "/yui/yui-min.js",
+
+    "componentDefaults": {
+        "yuiBuildUrl"     : "../",
+        "yuiLocalBuildUrl": "../",
+        "yuiSeedUrl"      : "/seed/"
+    },
+
+    "server": {
+        "staticPaths": [
+            "../../../"
+        ]
+    }
+}

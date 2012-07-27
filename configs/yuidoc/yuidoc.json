@@ -1,0 +1,11 @@
+{
+    "name": "yogi doc server",
+    "description": "yogi doc server",
+    "version": "3.6.0",
+    "url": "http://yuilibrary.com/",
+    "options": {
+        "linkNatives": "true",        
+        "attributesEmit": "true",
+        "outdir": "../api-js"
+    }
+}
