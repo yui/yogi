@@ -1,0 +1,10 @@
+{
+    "name"       : "{{title}}",
+    "displayName": "{{name}}",
+    "description": "{{summary}}",
+    "author"     : [ "{{author}}" ],
+
+    "tags": {{tags}},
+
+    "examples": []
+}
