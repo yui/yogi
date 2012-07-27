@@ -9,6 +9,7 @@ var options = args.parse();
 config.init(options);
 log.warn('this is experimental, use ay your own risk!!');
 log.debug('starting up yogi');
+log.debug("I'm smarter than the av-er-age bear!");
 
 if (!options.cmd) {
     log.bail('Command not known: ' + options.main);
