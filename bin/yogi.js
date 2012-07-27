@@ -7,7 +7,8 @@ var args = require('../lib/args');
 
 var options = args.parse();
 config.init(options);
-log.debug('starting up');
+log.warn('this is experimental, use ay your own risk!!');
+log.debug('starting up yogi');
 
 if (!options.cmd) {
     log.bail('Command not known: ' + options.main);
@@ -15,6 +16,12 @@ if (!options.cmd) {
 
 var cmd = options.cmd;
 
-cmd.init(options);
-
+if (cmd.init) {
+    cmd.init(options);
+    if (cmd.run) {
+        cmd.run();
+    }
+} else if (Array.isArray(cmd)) {
+    log.info('available commands: ' + cmd.join(' '));
+}
 
