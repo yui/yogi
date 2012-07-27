@@ -6,8 +6,18 @@
         "yogi": "./bin/yogi.js"
     },
     "dependencies": {
+        "grover": "*",
+        "yuidocjs": "~0.3.0",
+        "selleck": "*",
+        "yui-coverage": "*",
+        "yui-local": "*",
+        "combohandler": "*",
+        "express": "~2.5.11",
+        "jslint": "*",
+        "ncp": "*",
         "colors": "*",
         "request": "*",
+        "rimraf": "*",
         "nopt": "1",
         "mkdirp": "~0.3.3",
         "osenv": "*"
