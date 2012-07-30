@@ -7,7 +7,7 @@ var args = require('../lib/args');
 
 var options = args.parse();
 config.init(options);
-log.warn('this is experimental, use ay your own risk!!');
+log.warn('THIS IS EXPERIMENTAL, USE AT YOUR OWN RISK!!');
 log.debug('starting up yogi');
 log.debug("I'm smarter than the av-er-age bear!");
 
