@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+/*
+Copyright (c) 2012, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://yuilibrary.com/license/
+*/
+
 var log = require('../lib/log');
 var config = require('../lib/config');
 var args = require('../lib/args');
