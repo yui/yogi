@@ -23,9 +23,10 @@
         "osenv": "*"
     },
     "scripts": {
-        "test": "./node_modules/.bin/vows ./tests/*.js"
+        "test": "make test"
     },
     "devDependencies": {
+        "jslint": "*",
         "vows": "*"
     }
 }
