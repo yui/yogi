@@ -23,7 +23,8 @@
         "osenv": "*"
     },
     "scripts": {
-        "test": "make test"
+        "pretest": "./node_modules/.bin/jslint --white --sloppy --node --stupid --nomen --plusplus  ./lib/*.js ./lib/*/*.js",
+        "test": "./node_modules/.bin/vows ./tests/*.js"
     },
     "devDependencies": {
         "jslint": "*",
