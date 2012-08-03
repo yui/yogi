@@ -7,6 +7,10 @@ help:
 docs: help
 	./node_modules/.bin/selleck --project conf/docs/ ./docs/ --output ./output
 
+deploydocs: docs
+	rm -rRf ../yogi-pages/*
+	cp -R ./output/* ../yogi-pages/
+
 lint:
 	npm run-script pretest
 
