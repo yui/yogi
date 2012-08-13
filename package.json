@@ -20,7 +20,8 @@
         "rimraf": "*",
         "nopt": "1",
         "mkdirp": "~0.3.3",
-        "osenv": "*"
+        "osenv": "*",
+        "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
         "pretest": "./node_modules/.bin/jslint --white --sloppy --node --stupid --nomen --plusplus  ./lib/*.js ./lib/*/*.js",
