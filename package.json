@@ -22,6 +22,7 @@
         "nopt": "1",
         "mkdirp": "~0.3.3",
         "osenv": "*",
+        "yui-lint": "*",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
