@@ -23,6 +23,7 @@
         "mkdirp": "~0.3.3",
         "osenv": "*",
         "yui-lint": "*",
+        "shifter": "*",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
