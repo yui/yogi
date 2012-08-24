@@ -1,7 +1,7 @@
 {
     "name": "yogi",
     "description": "YUI Or Gallery Interface (CLI to YUI and Gallery development)",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "bin": {
         "yogi": "./bin/yogi.js"
     },
@@ -23,7 +23,7 @@
         "mkdirp": "~0.3.3",
         "osenv": "*",
         "yui-lint": "*",
-        "shifter": "*",
+        "shifter": ">=0.0.10",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
