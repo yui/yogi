@@ -13,3 +13,7 @@ h1 {
     margin: 0;
     padding: 1em;
 }
+
+div.main {
+    padding: 1em;
+}

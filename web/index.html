@@ -3,14 +3,26 @@
 <head>
     <title>yogi server</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
-    <link href="assets/yogi.css" rel="stylesheet">
+    <link href="/yogi/assets/yogi.css" rel="stylesheet">
 </head>
 <body>
 <h1>yogi is here to help with {{module}}</h1>
-<ul>
-    <li><a href="/docs/{{module}}/">Examples and Landing Page</a></li>
-    <li><a href="/api/">API Documentation</a></li>
-    <!--li><a href="/tests/">Tests (+coverage)</a></li-->
-</ul>
+
+<div class="main">
+    <h2>Docs and Stuff</h2>
+    <ul>
+        <li><a href="/docs/{{module}}/">Examples and Landing Page</a></li>
+        <li><a href="/api/modules/{{module}}.html">API Documentation</a></li>
+    </ul>
+    <h2>Unit Tests</h2>
+    <ul>
+        {{tests}}
+    </ul>
+
+    <h2>Unit Tests + coverage</h2>
+    <ul>
+        {{covertests}}
+    </ul>
+</div>
 </body>
 </html>
