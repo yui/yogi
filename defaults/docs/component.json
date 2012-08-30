@@ -1,6 +1,6 @@
 {
     "name"       : "{{title}}",
-    "displayName": "{{name}}",
+    "displayName": "Gallery: {{name}}",
     "description": "{{summary}}",
     "author"     : [ "{{author}}" ],
 
