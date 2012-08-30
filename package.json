@@ -1,7 +1,7 @@
 {
     "name": "yogi",
     "description": "YUI Or Gallery Interface (CLI to YUI and Gallery development)",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "bin": {
         "yogi": "./bin/yogi.js"
     },
