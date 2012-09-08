@@ -22,6 +22,7 @@
         "osenv": "*",
         "yui-lint": "*",
         "shifter": ">=0.0.10",
+        "portfinder": "*",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
