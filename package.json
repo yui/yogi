@@ -25,6 +25,7 @@
         "shifter": ">=0.0.10",
         "portfinder": "*",
         "echoecho": "*",
+        "istanbul": "*",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
