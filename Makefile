@@ -4,7 +4,7 @@ all:
 help:
 	./bin/yogi.js --help | tail -n+8  > ./conf/docs/partials/help.mustache
 
-docs: clean ersion help
+docs: clean version help
 	./node_modules/.bin/selleck --project conf/docs/ ./docs/ --output ./output
 
 deploydocs: docs
