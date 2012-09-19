@@ -26,6 +26,7 @@
         "portfinder": "*",
         "echoecho": "*",
         "istanbul": "*",
+        "yeti": "http://latest.yeti.cx/",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
