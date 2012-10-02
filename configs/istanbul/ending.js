@@ -37,7 +37,7 @@
                     method: 'POST',
                     data: Y.JSON.stringify(__coverage__),
                     headers: {
-                        'Content-type': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                     on: {
                         complete: function(id, e) {
