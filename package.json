@@ -1,7 +1,7 @@
 {
     "name": "yogi",
     "description": "YUI Or Gallery Interface (CLI to YUI and Gallery development)",
-    "version": "0.0.27",
+    "version": "0.0.28",
     "author": "Dav Glass <davglass@gmail.com>",
     "bin": {
         "yogi": "./bin/yogi.js"
@@ -13,7 +13,8 @@
         "yuitest": "*",
         "combohandler": "*",
         "express": "~2.5.11",
-        "jslint": "*",
+        "yui-lint": "~0.1.1",
+        "jshint": "~0.9.0",
         "ncp": "*",
         "colors": "*",
         "request": "*",
@@ -21,16 +22,15 @@
         "nopt": "1",
         "mkdirp": "~0.3.3",
         "osenv": "*",
-        "yui-lint": "*",
-        "shifter": ">=0.0.10",
+        "shifter": ">=0.1.0",
         "portfinder": "*",
         "echoecho": "*",
-        "istanbul": "*",
+        "istanbul": "~0.1.5",
         "yeti": "http://latest.yeti.cx/",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master"
     },
     "scripts": {
-        "pretest": "jslint --white --sloppy --node --stupid --nomen --plusplus  ./lib/*.js ./lib/*/*.js",
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js ./lib/*/*.js",
         "test": "vows --spec ./tests/*.js"
     },
     "devDependencies": {
