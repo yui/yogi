@@ -4,10 +4,23 @@ YOGI
 yogi (yōgē) is a commandline interface to aid in the development of YUI and Gallery modules.
 
 
+INSTALL
+=======
+
+    npm -g install yogi
+    
+
 USAGE
 =====
 
     yogi help
+
+
+DOCUMENTATION
+=============
+
+[Documentation can be found here](http://yui.github.com/yogi/)
+
 
 
 BUILD
