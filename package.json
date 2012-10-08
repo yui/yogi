@@ -15,7 +15,7 @@
         "express": "~2.5.11",
         "yui-lint": "~0.1.1",
         "jshint": "~0.9.0",
-        "ncp": "*",
+        "cpr": "~0.0.3",
         "colors": "*",
         "request": "*",
         "rimraf": "*",
@@ -34,7 +34,6 @@
         "test": "vows --spec ./tests/*.js"
     },
     "devDependencies": {
-        "jslint": "*",
         "vows": "*"
     },
     "preferGlobal": "true",
