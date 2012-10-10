@@ -27,7 +27,8 @@
         "echoecho": "*",
         "istanbul": "~0.1.5",
         "yeti": "http://latest.yeti.cx/",
-        "editor": "https://github.com/dominictarr/node-editor/tarball/master"
+        "editor": "https://github.com/dominictarr/node-editor/tarball/master",
+        "wiky.js": "https://github.com/davglass/wiky.js/tarball/master"
     },
     "scripts": {
         "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js ./lib/*/*.js",
