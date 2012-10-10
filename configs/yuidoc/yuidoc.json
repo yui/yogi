@@ -6,6 +6,9 @@
     "options": {
         "linkNatives": "true",        
         "attributesEmit": "true",
-        "outdir": "../api-js"
+        "outdir": "../api-js",
+        "paths": [
+            "./js/"
+        ]
     }
 }
