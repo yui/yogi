@@ -22,7 +22,7 @@
         "nopt": "1",
         "mkdirp": "~0.3.3",
         "osenv": "*",
-        "shifter": ">=0.1.0",
+        "shifter": ">=0.2.0",
         "portfinder": "*",
         "echoecho": "*",
         "istanbul": "~0.1.5",
