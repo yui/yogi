@@ -25,7 +25,7 @@
         "shifter": ">=0.2.0",
         "portfinder": "*",
         "echoecho": "*",
-        "istanbul": "~0.1.5",
+        "istanbul": "~0.1.10",
         "yeti": "http://latest.yeti.cx/",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master",
         "wiky.js": "https://github.com/davglass/wiky.js/tarball/master"
