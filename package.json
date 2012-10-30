@@ -26,6 +26,8 @@
         "portfinder": "*",
         "echoecho": "*",
         "istanbul": "~0.1.10",
+        "findit": "~0.1.2",
+        "treeify": "~0.2.0",
         "yeti": "http://latest.yeti.cx/",
         "editor": "https://github.com/dominictarr/node-editor/tarball/master",
         "wiky.js": "https://github.com/davglass/wiky.js/tarball/master"
