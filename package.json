@@ -24,7 +24,7 @@
         "osenv": "*",
         "shifter": ">=0.2.0",
         "portfinder": "*",
-        "echoecho": "*",
+        "echoecho": "~0.1.0",
         "istanbul": "~0.1.10",
         "findit": "~0.1.2",
         "treeify": "~0.2.0",
