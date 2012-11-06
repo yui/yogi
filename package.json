@@ -8,7 +8,7 @@
     },
     "dependencies": {
         "grover": "*",
-        "yuidocjs": "~0.3.0",
+        "yuidocjs": "~0.3.31",
         "selleck": "*",
         "yuitest": "*",
         "combohandler": "*",
