@@ -33,7 +33,7 @@
         "wiky.js": "https://github.com/davglass/wiky.js/tarball/master",
         "timethat": "*",
         "yui": "*",
-        "git-travis": "~0.1.1"
+        "git-travis": "~0.1.2"
     },
     "scripts": {
         "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js ./lib/*/*.js",
