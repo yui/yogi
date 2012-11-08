@@ -32,7 +32,8 @@
         "editor": "https://github.com/dominictarr/node-editor/tarball/master",
         "wiky.js": "https://github.com/davglass/wiky.js/tarball/master",
         "timethat": "*",
-        "yui": "*"
+        "yui": "*",
+        "git-travis": "~0.1.0"
     },
     "scripts": {
         "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js ./lib/*/*.js",
