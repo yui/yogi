@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>new gallery integration</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssgrids/grids-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui.js"></script>
+</head>
+<body>
+<a href="https://github.com/yui/yogi"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://yuilibrary.com/img/yui-logo.png"> new gallery integration</h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content">
+<h2 id="before-we-get-started">before we get started</h2>
+
+<p>
+<code>yogi</code> can talk to the <a href="http://yuilibrary.com/">YUILibrary.com</a> and <a href="https://github.com/">GitHub</a>,
+take a look at the <a href="../auth">authentication with yogi</a> docs to get setup.
+</p>
+
+<h2 id="getting-started">getting started</h2>
+
+<p>
+<code>yogi</code> contains everything you will ever need to create and maintain a quality YUI Gallery module.
+</p>
+
+<h2 id="gallery-improvements">gallery improvements</h2>
+
+<p>
+<code>yogi</code> officially fully supports new Gallery modules. The YUI Gallery upgrade is deployed and will be
+used as the default gallery system from now on. These updates came with a few new features:
+</p>
+
+<ul>
+    <li>Builds are done with <a href="http://yui.github.com/shifter">Shifter</a></li>
+    <li>Modules are tested with <code>yogi</code></li>
+    <li>Modules are no longer required to live in a fork of the <code>yui3-gallery</code> repo.</li>
+    <li>Modules that have examples, api docs and tests will be integrated into the YUI website.</li>
+</ul>
+
+<p>More information on converting an existing module <a href="#upgrading-an-old-module">can be found here</a>.</p>
+
+<h2 id="creating-a-new-module">creating a new module</h2>
+
+<p>
+Creating a new gallery module is as simple as: <code>yogi create mymodule</code>
+</p>
+
+<p>This will check the website to ensure that the module name is free and 
+create the module on the YUI website.</p>
+
+<h3 id="initializing-a-new-module">initializing a new module</h3>
+
+<p>
+<code>yogi</code> also knows how to create a module's infrastructure too, just add <code>--init</code> and she
+will do her thing. Here's a step by step example:
+</p>
+
+<h3 id="verifying-the-module">verifying the module</h3>
+
+<p>
+<code>yogi</code> gathers a little information about your local environment and asks
+you if everything looks ok:
+</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>yogi create testmodule --init
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+-------------------------------------------------------------------------
+yogi [info]  yogi found this git origin:   git@github.com:davglass&#x2F;gallery.git
+yogi [info]  and this repo:                gallery
+yogi [info]  using this path:              src&#x2F;testmodule
+yogi [info]  of type:                      js
+yogi [info]  with this license:            YUI BSD
+-------------------------------------------------------------------------
+yogi [info]  checking if testmodule is free
+yogi [info]  module name is free
+are you sure you want to request this name with the above information? [Y&#x2F;n] y</pre>
+
+
+<h3 id="requesting-to-reserve-your-name">requesting to reserve your name</h3>
+<p>
+Next she will actually perform the request and reserve the module name for you:
+</p>
+
+<pre class="code terminal">yogi [info]  yogi is requesting this module for you
+yogi [info]  testmodule was created successfully</pre>
+
+
+<h3 id="creating-your-stuff">creating your stuff</h3>
+
+<p>
+Next she will again check the environment and you can verify that she's doing
+the right thing for your module.
+</p>
+
+<pre class="code terminal">yogi [info]  initializing new module with the following info:
+
+--------------------------------------------------------------------------------------
+yogi [info]  yogi found this git origin:   git@github.com:davglass&#x2F;gallery.git
+yogi [info]  in this location:             &#x2F;ssd&#x2F;home&#x2F;yui&#x2F;src&#x2F;davglass-gallery&#x2F;.git
+yogi [info]  and this repo:                gallery
+yogi [info]  using this path:              src&#x2F;testmodule
+yogi [info]  of type:                      js
+yogi [info]  with this license:            YUI BSD
+yogi [info]  
+yogi [info]  yogi will create this module here:
+yogi [info]    &#x2F;ssd&#x2F;home&#x2F;yui&#x2F;src&#x2F;davglass-gallery&#x2F;src&#x2F;testmodule
+yogi [info]  
+---------------------------------------------------------------------------------------
+
+does the above look correct? may yogi create this module? [y&#x2F;N] y</pre>
+
+
+<h3 id="getting-things-done">getting things done</h3>
+
+<p>
+Now that she has all the information she needs, <code>yogi</code> will proceed to create your module.
+</p>
+
+<pre class="code terminal">yogi [info]  creating module (testmodule) in: &#x2F;ssd&#x2F;home&#x2F;yui&#x2F;src&#x2F;davglass-gallery&#x2F;src&#x2F;testmodule
+yogi [info]  creating default directory structure
+yogi [info]  directories created, processing files
+
+yogi [info]  module created, here&#x27;s what yogi did for you:
+
+   src&#x2F;testmodule
+       ├── HISTORY.md
+       ├── README.md
+       ├── assets&#x2F;
+       ├── build.json
+       ├── css&#x2F;
+       ├── docs&#x2F;
+       │  ├── component.json
+       │  └── index.mustache
+       ├── js&#x2F;
+       │  └── gallery-testmodule.js
+       ├── meta&#x2F;
+       │  └── gallery-testmodule.json
+       └── tests&#x2F;
+          └── unit&#x2F;
+             ├── index.html
+             └── js&#x2F;
+                └── tests.js
+       
+
+yogi [info]  yogi took 0.06 seconds to create this module</pre>
+
+
+<p>Now you can instantly start coding, documenting and testing your new module. Since she created this module in the new standardized format,
+all of her built in tools are available for you. Once you're ready to deploy, check out how <code>yogi</code> can help you <a href="../cdn">make a cdn request</a>.</p>
+
+<h2 id="upgrading-an-old-module">upgrading an old module</h2>
+
+<p>
+Now that you don't have to keep your gallery modules in a fork of the <code>yui3-gallery</code> repo, you might want to move them somewhere else. <code>yogi</code> can help 
+you with that too!
+</p>
+
+<p>
+There are two things that you can change to help you maintain your old modules in a better way. The <code>repo</code> name and the <code>path</code> to the module. All 
+current modules have a default of <code>yui3-gallery</code> and <code>src&#x2F;[module name]</code> as defaults. <code>yogi</code> allows you to view and change these keys so you
+can update your modules when and how you want.
+</p>
+
+<p>
+For this example, we will use <code>my-old-module</code> as the module to be converted. The first thing you do is create your new gallery repo on Github, we'll use <code>my-gallery</code> as the name.
+After creating this repo and initializing it with <code>git init</code>, you copy <code>yui3-gallery&#x2F;src&#x2F;gallery-my-old-module&#x2F;</code> into the new <code>my-gallery&#x2F;src&#x2F;gallery-my-old-module</code>.
+</p>
+
+<p>Now that you have moved the old source into the new repo, you can now have <code>yogi</code> update this to the new module format:</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>cd my-gallery&#x2F;src&#x2F;gallery-my-old-module
+<span class="noselect">$ </span>yogi update</pre>
+
+
+<p><code>yogi</code> will run through a process similar to a new module above and convert your existing module over. It will even pull your landing page document
+from the old Gallery site and import that into Selleck doc format.</p>
+
+<p>Once the module has been converted, you may now use other yogi commands on it. The one we will use to switch the <code>repo</code> and <code>path</code>
+is <code>yogi info</code>. Executing <code>yogi info</code> from this module's directory should output something like this:</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>cd my-gallery&#x2F;src&#x2F;gallery-my-old-module
+<span class="noselect">$ </span>yogi info
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+
+   username&#x2F;gallery-my-old-module
+
+   created: Fri Nov 09 2012 11:07:59 GMT-0600 (CST)
+
+       clone this module:
+           git clone git:&#x2F;&#x2F;github.com&#x2F;username&#x2F;yui3-gallery.git
+           cd my-gallery&#x2F;src&#x2F;gallery-my-old-module</pre>
+
+
+<h3 id="changing-the-repo">Changing the repo</h3>
+
+<p>
+Now we can see that the repo for this module is defaulted to <code>yui3-gallery</code>, we can change this with:
+</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>yogi info --set-repo=my-gallery
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+yogi [info]  updating info for this module:
+yogi [info]  setting repo to: my-gallery
+
+   username&#x2F;gallery-my-old-module
+
+   created: Fri Nov 09 2012 11:07:59 GMT-0600 (CST)
+
+       clone this module:
+           git clone git:&#x2F;&#x2F;github.com&#x2F;username&#x2F;my-gallery.git
+           cd my-gallery&#x2F;src&#x2F;gallery-my-old-module</pre>
+
+
+<p>Now the repo name has changed, on the next CDN deployment the Gallery build will pull this module from this repo.</p>
+
+<h3 id="changing-the-path-to-the-source">Changing the path to the source</h3>
+
+<p>
+From above, we can see the path to the source is: <code>src&#x2F;gallery-my-old-module</code>, but what if we want this module to be <code>old-one</code> locally?
+<code>yogi info</code> is here to help again:
+</p>
+
+
+
+<pre class="code terminal"><span class="noselect">$ </span>yogi info --set-path=old-one
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+yogi [info]  updating info for this module:
+yogi [info]  setting path to: old-one
+
+   username&#x2F;gallery-my-old-module
+
+   created: Fri Nov 09 2012 11:07:59 GMT-0600 (CST)
+
+       clone this module:
+           git clone git:&#x2F;&#x2F;github.com&#x2F;username&#x2F;my-gallery.git
+           cd my-gallery&#x2F;src&#x2F;old-one
+    
+<span class="noselect">$ </span>cd ..&#x2F;
+<span class="noselect">$ </span>mv gallery-my-old-module old-one</pre>
+
+
+<p>Now the path name has changed, on the next CDN deployment the Gallery build will pull this module from this path.</p>
+
+<p><strong>Note: </strong> <em>You can also use them both at once like: <code>yogi info --set-path=src&#x2F;old-one --set-repo=my-gallery</code></em></p>
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                <ul class="links">
+                    <li><a href="https://github.com/yui/yogi/" class="button">Get the Source</a></li>
+                    <li><a href="https://github.com/yui/yogi/issues/" class="button">File an Issue</a></li>
+                </ul>
+                <div class="sidebox">
+                    <div class="hd">
+                        <h2 class="no-toc">Build Status</h2>
+                    </div>
+
+                    <div class="bd">
+                        <a href="http://travis-ci.org/yui/yogi"><img src="https://secure.travis-ci.org/yui/yogi.png?branch=master" border="0"></a>
+                    </div>
+                </div>
+                
+                    <div id="toc" class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">Table of Contents</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="toc">
+<li>
+<a href="#before-we-get-started">before we get started</a>
+</li>
+<li>
+<a href="#getting-started">getting started</a>
+</li>
+<li>
+<a href="#gallery-improvements">gallery improvements</a>
+</li>
+<li>
+<a href="#creating-a-new-module">creating a new module</a>
+<ul class="toc">
+<li>
+<a href="#initializing-a-new-module">initializing a new module</a>
+</li>
+<li>
+<a href="#verifying-the-module">verifying the module</a>
+</li>
+<li>
+<a href="#requesting-to-reserve-your-name">requesting to reserve your name</a>
+</li>
+<li>
+<a href="#creating-your-stuff">creating your stuff</a>
+</li>
+<li>
+<a href="#getting-things-done">getting things done</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#upgrading-an-old-module">upgrading an old module</a>
+<ul class="toc">
+<li>
+<a href="#changing-the-repo">Changing the repo</a>
+</li>
+<li>
+<a href="#changing-the-path-to-the-source">Changing the path to the source</a>
+</li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

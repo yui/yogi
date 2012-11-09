@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>testing with yogi</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssgrids/grids-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui.js"></script>
+</head>
+<body>
+<a href="https://github.com/yui/yogi"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://yuilibrary.com/img/yui-logo.png"> testing with yogi</h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content">
+<h2 id="getting-started">getting started</h2>
+
+<p>
+Testing with <code>yogi</code> will change your life, I'm not kidding! <code>yogi</code> makes it so simple and fast to
+test your module code that you will wonder where she has been all your life.
+</p>
+
+<h2 id="how-yui-is-using-it">how yui is using it</h2>
+
+<p>
+For months now, <code>yogi test</code> has been powering the <a href="http://travis-ci.org/yui/yui3/">YUI/Travis-CI</a> builds,
+as of this writing, she has executed an average of <code>7,200</code> <a href="http://phantomjs.org/">PhantomJS</a> tests 
+(with <a href="http://github.com/davglass/grover">grover</a>)  and <code>1,200</code> cli based tests 
+(with <a href="http://github.com/yui/yuitest/">YUITest</a> on <a href="http://nodejs.org/">NodeJS</a>) across <code>450+</code> builds. 
+That's about <strong>3.78 million</strong> tests! And that's just since August of 2012.
+</p>
+
+<h2 id="module-testing-from-the-command-line-or-ci">module testing from the command line or ci</h2>
+
+<p>
+With <code>yogi</code>, automated/cli YUI testing as never been easier. It's this simple:
+</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>cd yui3&#x2F;src&#x2F;json;
+<span class="noselect">$ </span>yogi test
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+yogi [info]  using module: json
+yogi [info]  prepping grover tests
+yogi [info]  adding tests route
+yogi [info]  listening on: http:&#x2F;&#x2F;127.0.0.1:5000
+yogi [info]  starting cli tests for: json
+
+YUITest@0.7.8
+......................................................................
+Total tests: 70, Failures: 0, Skipped: 0, Time: 0.073 seconds
+
+
+yogi [info]  yuitest tests complete
+Starting Grover on 1 files with PhantomJS@1.7.0
+  Running 15 concurrent tests at a time.
+✔ [JSON]: Passed: 69 Failed: 0 Total: 69 (ignored 0) (0.823 seconds)
+----------------------------------------------------------------
+✔ [Total]: Passed: 69 Failed: 0 Total: 69 (ignored 0) (0.823 seconds)
+  [Grover Execution Timer] 1.378 seconds
+yogi [info]  grover tests complete
+
+<span class="noselect">$</span></pre>
+
+
+<p>
+This works for any module in the YUI source tree and <a href="../gallery/">properly configured</a> Gallery modules too!
+</p>
+
+<h2 id="code-coverage-support">code coverage support</h2>
+
+<p>
+<code>yogi</code> also supports <a href="https://github.com/gotwarlost/istanbul">istanbul</a> code coverage reports too, and they
+are just as simple as this:
+</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>cd yui3&#x2F;src&#x2F;json;
+<span class="noselect">$ </span>yogi test --coverage --istanbul
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+yogi [info]  using module: json
+yogi [info]  prepping grover tests
+yogi [info]  adding tests route
+yogi [info]  listening on: http:&#x2F;&#x2F;127.0.0.1:5000
+yogi [info]  starting cli tests for: json
+
+YUITest@0.7.8
+......................................................................
+Total tests: 70, Failures: 0, Skipped: 0, Time: 0.079 seconds
+
+
+yogi [info]  yuitest tests complete
+yogi [info]  turning on coverage support in grover
+Starting Grover on 1 files with PhantomJS@1.7.0
+  Running 15 concurrent tests at a time.
+✔ [JSON]: Passed: 69 Failed: 0 Total: 69 (ignored 0) (0.829 seconds) 89%
+
+------------------------+-----------+-----------+-----------+-----------+
+File                    |   % Stmts |% Branches |   % Funcs |   % Lines |
+------------------------+-----------+-----------+-----------+-----------+
+   json-parse&#x2F;          |     93.75 |     78.13 |      87.5 |     93.75 |
+      json-parse.js     |     93.75 |     78.13 |      87.5 |     93.75 |
+   json-stringify&#x2F;      |     84.52 |     82.56 |     72.73 |     84.52 |
+      json-stringify.js |     84.52 |     82.56 |     72.73 |     84.52 |
+------------------------+-----------+-----------+-----------+-----------+
+All files               |     87.07 |     81.36 |     78.95 |     87.07 |
+------------------------+-----------+-----------+-----------+-----------+
+
+
+=============================== Coverage summary ===============================
+Statements   : 87.07% ( 101&#x2F;116 )
+Branches     : 81.36% ( 96&#x2F;118 )
+Functions    : 78.95% ( 15&#x2F;19 )
+Lines        : 87.07% ( 101&#x2F;116 )
+================================================================================
+----------------------------------------------------------------
+✔ [Total]: Passed: 69 Failed: 0 Total: 69 (ignored 0) (0.829 seconds)
+  [Grover Execution Timer] 1.494 seconds
+yogi [info]  grover tests complete
+
+<span class="noselect">$</span></pre>
+
+
+<h2 id="module-testing-in-the-browser">module testing in the browser</h2>
+
+<p>
+<code>yogi</code> comes with a very helpful server feature as well. You can execute: <code>yogi serve</code>
+and she will show you your tests (docs and api docs too).
+</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>cd yui3&#x2F;src&#x2F;json;
+<span class="noselect">$ </span>yogi serve --istanbul
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+yogi [info]  using module: json
+yogi [info]  adding tests route
+yogi [info]  this is yui, using global path for all docs
+yogi [info]  launching yuidoc --server 5001 --config &#x2F;ssd&#x2F;home&#x2F;yui&#x2F;src&#x2F;yui3&#x2F;src&#x2F;common&#x2F;api&#x2F;yuidoc.json
+yogi [info]  this is yui, using global path for all docs
+yogi [info]  launching selleck --server 5002 --project &#x2F;ssd&#x2F;home&#x2F;yui&#x2F;src&#x2F;yui3&#x2F;src&#x2F;common&#x2F;docs&#x2F;
+yogi [info]  listening on: http:&#x2F;&#x2F;127.0.0.1:5000</pre>
+
+
+<p>
+Now you can visit <code>http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;</code> to see your <a href="http://github.com/yui/selleck">Selleck</a>
+docs, your <a href="https://github.com/yui/yuidoc">YUIDoc</a> powered API docs as well as your tests.
+</p>
+
+<h3 id="also-with-coverage">also with coverage</h3>
+
+<p>
+When launching <code>yogi serve</code>, she will find all your module tests and show them to you. If you access the <code>coverage</code>
+versions of your tests, they will run and then show you the coverage report so you can see what you missed!
+</p>
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                <ul class="links">
+                    <li><a href="https://github.com/yui/yogi/" class="button">Get the Source</a></li>
+                    <li><a href="https://github.com/yui/yogi/issues/" class="button">File an Issue</a></li>
+                </ul>
+                <div class="sidebox">
+                    <div class="hd">
+                        <h2 class="no-toc">Build Status</h2>
+                    </div>
+
+                    <div class="bd">
+                        <a href="http://travis-ci.org/yui/yogi"><img src="https://secure.travis-ci.org/yui/yogi.png?branch=master" border="0"></a>
+                    </div>
+                </div>
+                
+                    <div id="toc" class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">Table of Contents</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="toc">
+<li>
+<a href="#getting-started">getting started</a>
+</li>
+<li>
+<a href="#how-yui-is-using-it">how yui is using it</a>
+</li>
+<li>
+<a href="#module-testing-from-the-command-line-or-ci">module testing from the command line or ci</a>
+</li>
+<li>
+<a href="#code-coverage-support">code coverage support</a>
+</li>
+<li>
+<a href="#module-testing-in-the-browser">module testing in the browser</a>
+<ul class="toc">
+<li>
+<a href="#also-with-coverage">also with coverage</a>
+</li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

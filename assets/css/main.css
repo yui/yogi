@@ -173,9 +173,10 @@ pre.code, #doc pre.prettyprint {
 }
 
 pre.terminal, pre.cmd {
-    background: #F0EFFC;
-    border: 1px solid #D0CBFB;
-    border-left: 5px solid #D0CBFB;
+    background: #333;
+    color: #fff;
+    border: 1px solid #000;
+    border-left: 5px solid #000;
 }
 
 /* Don't reduce the font size of <code>/<kbd>/<samp> elements inside <pre>
