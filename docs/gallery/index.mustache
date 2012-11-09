@@ -1,0 +1,252 @@
+
+<h2>before we get started</h2>
+
+<p>
+`yogi` can talk to the <a href="http://yuilibrary.com/">YUILibrary.com</a> and <a href="https://github.com/">GitHub</a>,
+take a look at the <a href="../auth">authentication with yogi</a> docs to get setup.
+</p>
+
+<h2>getting started</h2>
+
+<p>
+`yogi` contains everything you will ever need to create and maintain a quality YUI Gallery module.
+</p>
+
+<h2>gallery improvements</h2>
+
+<p>
+`yogi` officially fully supports new Gallery modules. The YUI Gallery upgrade is deployed and will be
+used as the default gallery system from now on. These updates came with a few new features:
+</p>
+
+<ul>
+    <li>Builds are done with <a href="http://yui.github.com/shifter">Shifter</a></li>
+    <li>Modules are tested with `yogi`</li>
+    <li>Modules are no longer required to live in a fork of the `yui3-gallery` repo.</li>
+    <li>Modules that have examples, api docs and tests will be integrated into the YUI website.</li>
+</ul>
+
+<p>More information on converting an existing module <a href="#upgrading-an-old-module">can be found here</a>.</p>
+
+<h2>creating a new module</h2>
+
+<p>
+Creating a new gallery module is as simple as: `yogi create mymodule`
+</p>
+
+<p>This will check the website to ensure that the module name is free and 
+create the module on the YUI website.</p>
+
+<h3>initializing a new module</h3>
+
+<p>
+`yogi` also knows how to create a module's infrastructure too, just add `--init` and she
+will do her thing. Here's a step by step example:
+</p>
+
+<h3>verifying the module</h3>
+
+<p>
+`yogi` gathers a little information about your local environment and asks
+you if everything looks ok:
+</p>
+
+```terminal
+$ yogi create testmodule --init
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+-------------------------------------------------------------------------
+yogi [info]  yogi found this git origin:   git@github.com:davglass/gallery.git
+yogi [info]  and this repo:                gallery
+yogi [info]  using this path:              src/testmodule
+yogi [info]  of type:                      js
+yogi [info]  with this license:            YUI BSD
+-------------------------------------------------------------------------
+yogi [info]  checking if testmodule is free
+yogi [info]  module name is free
+are you sure you want to request this name with the above information? [Y/n] y
+
+```
+
+<h3>requesting to reserve your name</h3>
+<p>
+Next she will actually perform the request and reserve the module name for you:
+</p>
+
+```terminal
+yogi [info]  yogi is requesting this module for you
+yogi [info]  testmodule was created successfully
+```
+
+<h3>creating your stuff</h3>
+
+<p>
+Next she will again check the environment and you can verify that she's doing
+the right thing for your module.
+</p>
+
+```terminal
+yogi [info]  initializing new module with the following info:
+
+--------------------------------------------------------------------------------------
+yogi [info]  yogi found this git origin:   git@github.com:davglass/gallery.git
+yogi [info]  in this location:             /ssd/home/yui/src/davglass-gallery/.git
+yogi [info]  and this repo:                gallery
+yogi [info]  using this path:              src/testmodule
+yogi [info]  of type:                      js
+yogi [info]  with this license:            YUI BSD
+yogi [info]  
+yogi [info]  yogi will create this module here:
+yogi [info]    /ssd/home/yui/src/davglass-gallery/src/testmodule
+yogi [info]  
+---------------------------------------------------------------------------------------
+
+does the above look correct? may yogi create this module? [y/N] y
+```
+
+<h3>getting things done</h3>
+
+<p>
+Now that she has all the information she needs, `yogi` will proceed to create your module.
+</p>
+
+```terminal
+yogi [info]  creating module (testmodule) in: /ssd/home/yui/src/davglass-gallery/src/testmodule
+yogi [info]  creating default directory structure
+yogi [info]  directories created, processing files
+
+yogi [info]  module created, here's what yogi did for you:
+
+   src/testmodule
+       ├── HISTORY.md
+       ├── README.md
+       ├── assets/
+       ├── build.json
+       ├── css/
+       ├── docs/
+       │  ├── component.json
+       │  └── index.mustache
+       ├── js/
+       │  └── gallery-testmodule.js
+       ├── meta/
+       │  └── gallery-testmodule.json
+       └── tests/
+          └── unit/
+             ├── index.html
+             └── js/
+                └── tests.js
+       
+
+yogi [info]  yogi took 0.06 seconds to create this module
+```
+
+<p>Now you can instantly start coding, documenting and testing your new module. Since she created this module in the new standardized format,
+all of her built in tools are available for you. Once you're ready to deploy, check out how `yogi` can help you <a href="../cdn">make a cdn request</a>.</p>
+
+<h2>upgrading an old module</h2>
+
+<p>
+Now that you don't have to keep your gallery modules in a fork of the `yui3-gallery` repo, you might want to move them somewhere else. `yogi` can help 
+you with that too!
+</p>
+
+<p>
+There are two things that you can change to help you maintain your old modules in a better way. The `repo` name and the `path` to the module. All 
+current modules have a default of `yui3-gallery` and `src/[module name]` as defaults. `yogi` allows you to view and change these keys so you
+can update your modules when and how you want.
+</p>
+
+<p>
+For this example, we will use `my-old-module` as the module to be converted. The first thing you do is create your new gallery repo on Github, we'll use `my-gallery` as the name.
+After creating this repo and initializing it with `git init`, you copy `yui3-gallery/src/gallery-my-old-module/` into the new `my-gallery/src/gallery-my-old-module`.
+</p>
+
+<p>Now that you have moved the old source into the new repo, you can now have `yogi` update this to the new module format:</p>
+
+```terminal
+$ cd my-gallery/src/gallery-my-old-module
+$ yogi update
+```
+
+<p>`yogi` will run through a process similar to a new module above and convert your existing module over. It will even pull your landing page document
+from the old Gallery site and import that into Selleck doc format.</p>
+
+<p>Once the module has been converted, you may now use other yogi commands on it. The one we will use to switch the `repo` and `path`
+is `yogi info`. Executing `yogi info` from this module's directory should output something like this:</p>
+
+```terminal
+$ cd my-gallery/src/gallery-my-old-module
+$ yogi info
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+
+   username/gallery-my-old-module
+
+   created: Fri Nov 09 2012 11:07:59 GMT-0600 (CST)
+
+       clone this module:
+           git clone git://github.com/username/yui3-gallery.git
+           cd my-gallery/src/gallery-my-old-module
+
+```
+
+<h3>Changing the repo</h3>
+
+<p>
+Now we can see that the repo for this module is defaulted to `yui3-gallery`, we can change this with:
+</p>
+
+```terminal
+
+$ yogi info --set-repo=my-gallery
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+yogi [info]  updating info for this module:
+yogi [info]  setting repo to: my-gallery
+
+   username/gallery-my-old-module
+
+   created: Fri Nov 09 2012 11:07:59 GMT-0600 (CST)
+
+       clone this module:
+           git clone git://github.com/username/my-gallery.git
+           cd my-gallery/src/gallery-my-old-module
+
+
+```
+
+<p>Now the repo name has changed, on the next CDN deployment the Gallery build will pull this module from this repo.</p>
+
+<h3>Changing the path to the source</h3>
+
+<p>
+From above, we can see the path to the source is: `src/gallery-my-old-module`, but what if we want this module to be `old-one` locally?
+`yogi info` is here to help again:
+</p>
+
+
+
+```terminal
+
+$ yogi info --set-path=old-one
+
+yogi [info]  using yogi@0.0.35 on node@0.8.14
+yogi [info]  updating info for this module:
+yogi [info]  setting path to: old-one
+
+   username/gallery-my-old-module
+
+   created: Fri Nov 09 2012 11:07:59 GMT-0600 (CST)
+
+       clone this module:
+           git clone git://github.com/username/my-gallery.git
+           cd my-gallery/src/old-one
+    
+$ cd ../
+$ mv gallery-my-old-module old-one
+    
+```
+
+<p>Now the path name has changed, on the next CDN deployment the Gallery build will pull this module from this path.</p>
+
+<p><strong>Note: </strong> <em>You can also use them both at once like: `yogi info --set-path=src/old-one --set-repo=my-gallery`</em></p>

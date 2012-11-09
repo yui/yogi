@@ -1,0 +1,51 @@
+
+<h2>getting started</h2>
+
+<p>
+`yogi` can talk to the <a href="http://yuilibrary.com/">YUILibrary.com</a> and <a href="https://github.com/">GitHub</a>,
+but first you have to tell her who you are. You can always as her, like this: `yogi whoami`. She will either show you
+your username or she will tell you to login.
+</p>
+
+<h3>logging in to yuilibrary</h3>
+
+<p>
+You can authenticate with the YUILibrary website by simply asking her to login: `yogi login`.
+</p>
+
+<p>
+She will then ask you for your `username` and `password`, then verify that on the website. Once
+authenticated, she will receive an auth token that she will store on your local machine. Your
+password will not be saved or written to disk, only the token. Any requests made after that will
+pass the token along to all API calls to act as you.
+</p>
+
+<p>
+You can disconnect your account with: `yogi logout`.
+</p>
+
+<p><strong>Note: </strong> <em>`yogi` only talks SSL, all authenticated requests will use SSL at all times.</em></p>
+
+<h3>logging into github</h3>
+
+
+<p>
+You can authenticate with GitHub by simply asking her to login: `yogi gh`.
+</p>
+
+<p>
+She will then ask you for your `username` and `password`, then verify that on the website. Once
+authenticated, she will receive an oAuth token that she will store on your local machine. Your
+password will not be saved or written to disk, only the token. Any requests made after that will
+pass the token along to all API calls to act as you.
+</p>
+
+<p>
+At any time, you can visit your <a href="https://github.com/settings/applications">GitHub settings</a>
+and revoke the token from that side, or you can use `yogi`'s built in config to remove all your info:
+</p>
+
+```terminal
+$ yogi config delete gh_user
+$ yogi config delete gh_token
+```

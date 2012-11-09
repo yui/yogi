@@ -1,0 +1,6 @@
+{
+    "name"       : "auth",
+    "displayName": "yogi authentication options",
+    "description": "use yogi to talk to other sites",
+    "author"     : "davglass"
+}

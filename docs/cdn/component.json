@@ -1,0 +1,6 @@
+{
+    "name"       : "cdn",
+    "displayName": "cdn options",
+    "description": "use yogi to put your module out there",
+    "author"     : "davglass"
+}
