@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>yogi authentication options</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssgrids/grids-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui.js"></script>
+</head>
+<body>
+<a href="https://github.com/yui/yogi"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://yuilibrary.com/img/yui-logo.png"> yogi authentication options</h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content">
+<h2 id="getting-started">getting started</h2>
+
+<p>
+<code>yogi</code> can talk to the <a href="http://yuilibrary.com/">YUILibrary.com</a> and <a href="https://github.com/">GitHub</a>,
+but first you have to tell her who you are. You can always as her, like this: <code>yogi whoami</code>. She will either show you
+your username or she will tell you to login.
+</p>
+
+<h3 id="logging-in-to-yuilibrary">logging in to yuilibrary</h3>
+
+<p>
+You can authenticate with the YUILibrary website by simply asking her to login: <code>yogi login</code>.
+</p>
+
+<p>
+She will then ask you for your <code>username</code> and <code>password</code>, then verify that on the website. Once
+authenticated, she will receive an auth token that she will store on your local machine. Your
+password will not be saved or written to disk, only the token. Any requests made after that will
+pass the token along to all API calls to act as you.
+</p>
+
+<p>
+You can disconnect your account with: <code>yogi logout</code>.
+</p>
+
+<p><strong>Note: </strong> <em><code>yogi</code> only talks SSL, all authenticated requests will use SSL at all times.</em></p>
+
+<h3 id="logging-into-github">logging into github</h3>
+
+
+<p>
+You can authenticate with GitHub by simply asking her to login: <code>yogi gh</code>.
+</p>
+
+<p>
+She will then ask you for your <code>username</code> and <code>password</code>, then verify that on the website. Once
+authenticated, she will receive an oAuth token that she will store on your local machine. Your
+password will not be saved or written to disk, only the token. Any requests made after that will
+pass the token along to all API calls to act as you.
+</p>
+
+<p>
+At any time, you can visit your <a href="https://github.com/settings/applications">GitHub settings</a>
+and revoke the token from that side, or you can use <code>yogi</code>'s built in config to remove all your info:
+</p>
+
+<pre class="code terminal"><span class="noselect">$ </span>yogi config delete gh_user
+<span class="noselect">$ </span>yogi config delete gh_token</pre>
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                <ul class="links">
+                    <li><a href="https://github.com/yui/yogi/" class="button">Get the Source</a></li>
+                    <li><a href="https://github.com/yui/yogi/issues/" class="button">File an Issue</a></li>
+                </ul>
+                <div class="sidebox">
+                    <div class="hd">
+                        <h2 class="no-toc">Build Status</h2>
+                    </div>
+
+                    <div class="bd">
+                        <a href="http://travis-ci.org/yui/yogi"><img src="https://secure.travis-ci.org/yui/yogi.png?branch=master" border="0"></a>
+                    </div>
+                </div>
+                
+                    <div id="toc" class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">Table of Contents</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="toc">
+<li>
+<a href="#getting-started">getting started</a>
+<ul class="toc">
+<li>
+<a href="#logging-in-to-yuilibrary">logging in to yuilibrary</a>
+</li>
+<li>
+<a href="#logging-into-github">logging into github</a>
+</li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
