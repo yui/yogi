@@ -1,29 +1,34 @@
-YOGI
+yogi
 ----
 
 yogi (yōgē) is a commandline interface to aid in the development of YUI and Gallery modules.
 
 
-INSTALL
+install
 =======
 
     npm -g install yogi
     
 
-USAGE
+usage
 =====
 
     yogi help
 
 
-DOCUMENTATION
+documentation
 =============
 
 [Documentation can be found here](http://yui.github.com/yogi/)
 
 
 
-BUILD
+build
 =====
 
 [![Build Status](https://secure.travis-ci.org/yui/yogi.png?branch=master)](http://travis-ci.org/yui/yogi)
+
+Developer Docs
+==============
+
+    selleck --server --project conf/docs/ ./docs/

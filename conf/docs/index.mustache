@@ -8,9 +8,22 @@ yogi is here to help!
 
 <ol>
     <li>download and install <a href="http://nodejs.org/#download">node.js</a></li>
-    <li>run `npm -g install https://github.com/yui/yogi/tarball/master`</li>
-    <li>run `yogi` from inside the <a href="https://github.com/yui/yui3">yui3 git repo</a> or the <a href="https://github.com/yui/yui3-gallery">yui3-gallery repo</a>.</li>
+    <li>run `npm -g install yogi`</li>
+    <li>run `yogi` from inside the <a href="https://github.com/yui/yui3">yui3 git repo</a>, the <a href="https://github.com/yui/yui3-gallery">yui3-gallery repo</a>
+    or your own source tree (similar to ours).
+    .</li>
 </ol>
+
+
+<h2 id="topics">help topics</h2>
+<ul>
+  {{#components}}
+    {{#meta}}
+        <li><a href="{{name}}/index.html">{{displayName}}</a></li>
+    {{/meta}}
+  {{/components}}
+</ul>
+
 
 <h2 id="help">command line arguments</h2>
 
@@ -20,3 +33,4 @@ yogi is here to help!
 
 {{>help}}
 ```
+
