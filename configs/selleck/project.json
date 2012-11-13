@@ -11,7 +11,7 @@
     "componentDefaults": {
         "yuiBuildUrl"     : "../",
         "yuiLocalBuildUrl": "../",
-        "yuiSeedUrl"      : "/seed/"
+        "yuiSeedUrl"      : "/build/yui/yui-min.js"
     },
 
     "server": {
