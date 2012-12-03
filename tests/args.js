@@ -1,5 +1,6 @@
 var vows = require('vows'),
     assert = require('assert'),
+    path = require('path'),
     args = require('../lib/args');
 
 var tests = {
@@ -68,6 +69,15 @@ var tests = {
         'should parse': function(topic) {
             assert.equal(topic.main, 'help');
             assert.equal(topic.parsed.loglevel, 'silent');
+        }
+    },
+    'should parse --json <path>': {
+        topic: function() {
+            return args.parse(['', '', '--json', './tests/some/path']);
+        },
+        'should parse': function(topic) {
+            assert.equal(topic.main, 'help');
+            assert.equal(topic.parsed.json, path.normalize(path.join(__dirname, './some/path')));
         }
     }
 };
