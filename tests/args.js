@@ -1,5 +1,6 @@
 var vows = require('vows'),
     assert = require('assert'),
+    path = require('path'),
     args = require('../lib/args');
 
 var tests = {
@@ -69,7 +70,34 @@ var tests = {
             assert.equal(topic.main, 'help');
             assert.equal(topic.parsed.loglevel, 'silent');
         }
-    }
+    },
+    'should parse --json <path>': {
+        topic: function() {
+            return args.parse(['', '', '--json', './some/path']);
+        },
+        'should parse': function(topic) {
+            assert.equal(topic.main, 'help');
+            assert.equal(topic.parsed.json, path.normalize(path.resolve('./some/path')));
+        }
+    },
+    'should parse --json': {
+        topic: function() {
+            return args.parse(['', '', '--json']);
+        },
+        'should parse': function(topic) {
+            assert.equal(topic.main, 'help');
+            assert.equal(topic.parsed.json, true);
+        }
+    },
+    'should parse --no-json': {
+        topic: function() {
+            return args.parse(['', '', '--no-json']);
+        },
+        'should parse': function(topic) {
+            assert.equal(topic.main, 'help');
+            assert.equal(topic.parsed.json, false);
+        }
+    },
 };
 
 //Dynamic tester, this ensures that the command was parsed correctly
