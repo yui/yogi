@@ -1,7 +1,7 @@
 {
     "name": "yogi doc server",
     "description": "yogi doc server",
-    "version": "3.6.0",
+    "version": "3.7.3",
     "url": "http://yuilibrary.com/",
     "options": {
         "linkNatives": "true",        
