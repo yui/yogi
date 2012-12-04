@@ -4,7 +4,7 @@
     "version": "3.7.3",
     "url": "http://yuilibrary.com/",
     "options": {
-        "linkNatives": "true",        
+        "linkNatives": "true",
         "attributesEmit": "true",
         "outdir": "../api-js",
         "paths": [
