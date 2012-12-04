@@ -3,6 +3,7 @@
     "displayName": "Gallery: {{name}}",
     "description": "{{summary}}",
     "author"     : [ "{{author}}" ],
+    "use"        : [ "{{title}}" ],
 
     "tags": {{tags}},
 
