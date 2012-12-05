@@ -3,26 +3,59 @@
 <head>
     <title>yogi server</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="/build/cssgrids/cssgrids-min.css">
     <link href="/yogi/assets/yogi.css" rel="stylesheet">
+    <script src="/build/yui/yui-min.js"></script>
 </head>
 <body>
-<h1>yogi is here to help with {{module}}</h1>
-
-<div class="main">
-    <h2>Docs and Stuff</h2>
-    <ul>
-        <li><a href="/docs/{{module}}/">Examples and Landing Page</a></li>
-        <li><a href="/api/modules/{{module}}.html">API Documentation</a></li>
-    </ul>
-    <h2>Unit Tests</h2>
-    <ul>
-        {{tests}}
-    </ul>
-
-    <h2>Unit Tests + coverage</h2>
-    <ul>
-        {{covertests}}
-    </ul>
+<div id="header" class="main yui3-g">
+    <div class="yui3-u-3-4">
+        <h1>yogi is here to help with {{module}}</h1>
+    </div>
+    <div class="yui3-u-1-4">
+        <img src="http://yuilibrary.com/img/yui-logo.png">
+    </div>
 </div>
+<div id="status" class="yui3-g">
+    <div class="yui3-u-1-3 gallery">
+        fetching gallery stamp
+    </div>
+    <div class="yui3-u-1-3 cdn">
+        fetching cdn window
+    </div>
+    <div class="yui3-u-1-3 version">
+        fetching yui version
+    </div>
+</div>
+
+<div class="main yui3-g">
+    <div class="yui3-u-1-4">
+        <h2>Docs and Stuff</h2>
+        <ul>
+            <li><a href="/docs/{{module}}/">Examples and Landing Page</a></li>
+            <li><a href="/api/modules/{{module}}.html">API Documentation</a></li>
+        </ul>
+    </div>
+    <div class="yui3-u-1-4">
+        <h2>Unit Tests</h2>
+        <ul>
+            {{tests}}
+        </ul>
+    </div>
+    <div class="yui3-u-1-4">
+        <h2>Unit Tests + coverage</h2>
+        <ul>
+            {{covertests}}
+        </ul>
+    </div>
+    <div class="yui3-u-1-4">
+        <h2>Tools</h2>
+        <ul>
+            <li><a href="/shifter">run shifter</a></li>
+            <li><a href="/grover">run grover</a></li>
+        </ul>
+    </div>
+</div>
+<script src="/yogi/assets/yogi.js"></script>
 </body>
 </html>
