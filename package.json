@@ -33,7 +33,8 @@
         "wiky.js": "https://github.com/davglass/wiky.js/tarball/master",
         "timethat": "*",
         "git-travis": "~0.1.2",
-        "win-spawn": "*"
+        "win-spawn": "*",
+        "ansispan": "https://github.com/davglass/ansispan/tarball/fixclosing"
     },
     "scripts": {
         "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js ./lib/*/*.js",
