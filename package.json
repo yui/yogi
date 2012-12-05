@@ -35,7 +35,8 @@
         "git-travis": "~0.1.2",
         "win-spawn": "*",
         "which": "*",
-        "ansispan": "https://github.com/davglass/ansispan/tarball/fixclosing"
+        "ansispan": "https://github.com/davglass/ansispan/tarball/fixclosing",
+        "complete": "*"
     },
     "scripts": {
         "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js ./lib/*/*.js",

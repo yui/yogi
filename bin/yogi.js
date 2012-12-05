@@ -6,12 +6,46 @@ Code licensed under the BSD License:
 http://yuilibrary.com/license/
 */
 
+var args = require('../lib/args');
+var complete = require('complete');
+
+var comp = {
+    program: 'yogi',
+    commands: {},
+    options: {
+        '--help': {},
+        '-h': {},
+        '--version': {},
+        '-v': {}
+    }
+};
+
+Object.keys(args.cmds).forEach(function(item) {
+    comp.commands[item] = {};
+    if (args.cmds[item].shell_complete) {
+        args.cmds[item].shell_complete.forEach(function(line) {
+            comp.commands[item][line] = {};
+        });
+    } else if (args.cmds[item].help) {
+        var help = args.cmds[item].help();
+        help.forEach(function(line) {
+            if (line.indexOf('--') === 0) {
+                line = line.split(' ')[0];
+                comp.commands[item][line] = {};
+            }
+        });
+    }
+});
+
+
+complete(comp);
+
 var log = require('../lib/log');
 var config = require('../lib/config');
-var args = require('../lib/args');
 var which = require('which');
 var spawn = require('win-spawn');
 var path = require('path');
+
 
 var options = args.parse();
 config.init(options);
