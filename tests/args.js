@@ -71,15 +71,6 @@ var tests = {
             assert.equal(topic.parsed.loglevel, 'silent');
         }
     },
-    'should parse --json <path>': {
-        topic: function() {
-            return args.parse(['', '', '--json', './some/path']);
-        },
-        'should parse': function(topic) {
-            assert.equal(topic.main, 'help');
-            assert.equal(topic.parsed.json, path.normalize(path.resolve('./some/path')));
-        }
-    },
     'should parse --json': {
         topic: function() {
             return args.parse(['', '', '--json']);

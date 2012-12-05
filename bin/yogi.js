@@ -9,7 +9,9 @@ http://yuilibrary.com/license/
 var log = require('../lib/log');
 var config = require('../lib/config');
 var args = require('../lib/args');
-
+var which = require('which');
+var spawn = require('win-spawn');
+var path = require('path');
 
 var options = args.parse();
 config.init(options);
@@ -22,17 +24,35 @@ log.debug('starting up yogi');
 log.debug("I'm smarter than the av-er-age bear!");
 
 if (!options.cmd) {
-    log.bail('Command not known: ' + options.main);
-}
+    var external;
 
-var cmd = options.cmd;
-
-if (cmd.init) {
-    cmd.init(options);
-    if (cmd.run) {
-        cmd.run();
+    try {
+        external = which.sync('yogi-' + options.main);
+    } catch (e) {
     }
-} else if (Array.isArray(cmd)) {
-    log.info('available commands: ' + cmd.join(' '));
-}
+    if (external) {
+        log.debug('executing external command: ' + external);
+        var env = process.env;
+        env.YOGI_PATH = path.join(__dirname, '../');
 
+        external = spawn(external, process.argv.splice(3), {
+            cwd: process.cwd(),
+            env: env,
+            stdio: 'inherit'
+        });
+    } else {
+        log.bail('Command not known: ' + options.main);
+    }
+
+} else {
+    var cmd = options.cmd;
+
+    if (cmd.init) {
+        cmd.init(options);
+        if (cmd.run) {
+            cmd.run();
+        }
+    } else if (Array.isArray(cmd)) {
+        log.info('available commands: ' + cmd.join(' '));
+    }
+}
