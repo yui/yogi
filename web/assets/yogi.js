@@ -5,13 +5,13 @@ YUI().use('jsonp', 'node', function(Y) {
 
     Y.jsonp('http://yuilibrary.com/api/v1/version?callback={callback}', function(o) {
         if (o && o.version) {
-            status.setHTML('Current YUI Version: ' + o.version);
+            status.setHTML('YUI version: ' + o.version);
         }
     });
 
     Y.jsonp('http://yuilibrary.com/api/v1/cdn/buildtag?callback={callback}', function(o) {
         if (o && o.buildtag) {
-            gstatus.setHTML('Current Gallery Version: ' + o.buildtag);
+            gstatus.setHTML('gallery version: ' + o.buildtag);
         }
     });
 
@@ -23,6 +23,8 @@ YUI().use('jsonp', 'node', function(Y) {
             cstatus.setHTML(html);
         }
     });
+
+    Y.one('#status .yogi').setHTML('yogi version: ' + YOGI.version);
 
 
 
@@ -44,5 +46,9 @@ YUI().use('jsonp', 'node', function(Y) {
         return 0;
     };
 
-    
+    if (YOGI.yui) {
+        Y.one('body').addClass('yui');
+    } else {
+        Y.one('body').addClass('gallery');
+    }
 });

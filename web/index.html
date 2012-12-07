@@ -17,13 +17,16 @@
     </div>
 </div>
 <div id="status" class="yui3-g">
-    <div class="yui3-u-1-3 gallery">
+    <div class="yui3-u-1-4 gallery">
         fetching gallery stamp
     </div>
-    <div class="yui3-u-1-3 cdn">
+    <div class="yui3-u-1-4 cdn">
         fetching cdn window
     </div>
-    <div class="yui3-u-1-3 version">
+    <div class="yui3-u-1-4 yogi">
+        fetching yogi version
+    </div>
+    <div class="yui3-u-1-4 version">
         fetching yui version
     </div>
 </div>
@@ -53,9 +56,13 @@
         <ul>
             <li><a href="/shifter">run shifter</a></li>
             <li><a href="/grover">run grover</a></li>
+            <li class="gallery"><a href="/info">module info</a></li>
         </ul>
     </div>
 </div>
+<script>
+var YOGI = {{YOGI_CONFIG}};
+</script>
 <script src="/yogi/assets/yogi.js"></script>
 </body>
 </html>

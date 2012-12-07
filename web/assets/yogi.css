@@ -56,7 +56,7 @@ a {
     text-align: right;
 }
 
-#status .cdn {
+#status .cdn, #status .yogi {
     text-align: center;
 }
 
@@ -85,7 +85,11 @@ a {
 
 body.shifter {
     background-color: #111111;
-    color: green;
+    color: #00FF00;
     font-size: 100%;
     margin: 1em;
+}
+
+body.yui li.gallery {
+    display: none;
 }
