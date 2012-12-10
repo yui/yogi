@@ -7,7 +7,7 @@
         "yogi": "./bin/yogi.js"
     },
     "dependencies": {
-        "grover": "~0.1.4",
+        "grover": "~0.1.5",
         "yuidocjs": "~0.3.31",
         "selleck": "*",
         "yuitest": "*",
@@ -16,7 +16,7 @@
         "yui-lint": "~0.1.1",
         "jshint": "~0.9.0",
         "cpr": "~0.0.3",
-        "colors": "*",
+        "ansi-color": "*",
         "request": "*",
         "rimraf": "*",
         "nopt": "1",
