@@ -46,7 +46,7 @@ YUI().use('jsonp', 'node', function(Y) {
         return 0;
     };
 
-    if (YOGI.yui) {
+    if (YOGI.yui || YOGI.module.name === 'gallery') {
         Y.one('body').addClass('yui');
     } else {
         Y.one('body').addClass('gallery');
