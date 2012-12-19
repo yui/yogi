@@ -7,7 +7,7 @@
         "yogi": "./bin/yogi.js"
     },
     "dependencies": {
-        "grover": "~0.1.5",
+        "grover": "~0.1.7",
         "yuidocjs": "~0.3.31",
         "selleck": "*",
         "yuitest": "*",
@@ -24,7 +24,7 @@
         "osenv": "*",
         "shifter": ">=0.2.0",
         "portfinder": "*",
-        "echoecho": "~0.1.0",
+        "echoecho": "~0.1.1",
         "istanbul": "~0.1.10",
         "findit": "~0.1.2",
         "treeify": "~0.2.0",
