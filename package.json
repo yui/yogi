@@ -7,7 +7,7 @@
         "yogi": "./bin/yogi.js"
     },
     "dependencies": {
-        "grover": "~0.1.7",
+        "grover": "~0.1.9",
         "yuidocjs": "~0.3.31",
         "selleck": "*",
         "yuitest": "*",
