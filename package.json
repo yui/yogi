@@ -32,7 +32,7 @@
         "editor": "https://github.com/dominictarr/node-editor/tarball/master",
         "wiky.js": "https://github.com/davglass/wiky.js/tarball/master",
         "timethat": "*",
-        "git-travis": "~0.1.2",
+        "git-travis": "~0.1.5",
         "win-spawn": "*",
         "which": "*",
         "ansispan": "https://github.com/davglass/ansispan/tarball/fixclosing",
