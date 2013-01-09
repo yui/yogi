@@ -35,7 +35,7 @@
         "git-travis": "~0.1.5",
         "win-spawn": "*",
         "which": "*",
-        "ansispan": "https://github.com/davglass/ansispan/tarball/fixclosing",
+        "ansispan": "~0.0.4",
         "complete": "*"
     },
     "scripts": {
