@@ -36,7 +36,8 @@
         "win-spawn": "*",
         "which": "*",
         "ansispan": "~0.0.4",
-        "complete": "*"
+        "complete": "*",
+        "promises-aplus-tests": "*"
     },
     "scripts": {
         "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js ./lib/*/*.js",
