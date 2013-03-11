@@ -36,7 +36,7 @@
         "win-spawn": "*",
         "which": "*",
         "ansispan": "~0.0.4",
-        "complete": "*",
+        "complete": "0.3.1",
         "promises-aplus-tests": "*"
     },
     "scripts": {
