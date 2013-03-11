@@ -9,7 +9,7 @@
     "dependencies": {
         "grover": "~0.1.10",
         "yuidocjs": "~0.3.31",
-        "selleck": "*",
+        "selleck": "~0.1.18",
         "yuitest": "*",
         "combohandler": "*",
         "express": "~3.1.0",
