@@ -12,7 +12,7 @@
         "selleck": "*",
         "yuitest": "*",
         "combohandler": "*",
-        "express": "~2.5.11",
+        "express": "~3.1.0",
         "yui-lint": "~0.1.1",
         "jshint": "~0.9.0",
         "cpr": "~0.0.3",
