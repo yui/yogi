@@ -1,7 +1,7 @@
 {
     "name": "yogi",
     "description": "YUI Or Gallery Interface (CLI to YUI and Gallery development)",
-    "version": "0.0.75",
+    "version": "0.0.76",
     "author": "Dav Glass <davglass@gmail.com>",
     "bin": {
         "yogi": "./bin/yogi.js"
