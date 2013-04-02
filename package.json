@@ -10,7 +10,7 @@
         "grover": "~0.1.10",
         "yuidocjs": "~0.3.31",
         "selleck": "~0.1.18",
-        "yuitest": "*",
+        "yuitest": "~0.7.9",
         "combohandler": "*",
         "express": "~3.1.0",
         "yui-lint": "~0.1.1",
