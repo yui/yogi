@@ -11,7 +11,7 @@
         "yuidocjs": "~0.3.31",
         "selleck": "~0.1.18",
         "yuitest": "~0.7.9",
-        "combohandler": "*",
+        "combohandler": "0.2.0",
         "express": "~3.1.0",
         "yui-lint": "~0.1.1",
         "jshint": "~0.9.0",
