@@ -7,8 +7,9 @@ http://yuilibrary.com/license/
 */
 
 var args = require('../lib/args');
+var log = require('../lib/log');
 
-if (!('TRAVIS' in process.env)) {
+try {
 
     var complete = require('complete');
 
@@ -43,9 +44,11 @@ if (!('TRAVIS' in process.env)) {
 
     complete(comp);
 
+} catch (e) {
+    log.debug('Failed to setup tab-completion module');
+    console.log(e);
 }
 
-var log = require('../lib/log');
 var config = require('../lib/config');
 var which = require('which');
 var spawn = require('win-spawn');
