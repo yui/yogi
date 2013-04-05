@@ -8,6 +8,11 @@ http://yuilibrary.com/license/
 
 var args = require('../lib/args');
 var log = require('../lib/log');
+var config = require('../lib/config');
+var which = require('which');
+var spawn = require('win-spawn');
+var path = require('path');
+var options = args.parse();
 
 try {
 
@@ -46,16 +51,12 @@ try {
 
 } catch (e) {
     log.debug('Failed to setup tab-completion module');
-    console.log(e);
+    if (options.parsed.loglevel === 'debug') {
+        console.log(e);
+    }
 }
 
-var config = require('../lib/config');
-var which = require('which');
-var spawn = require('win-spawn');
-var path = require('path');
 
-
-var options = args.parse();
 config.init(options);
 var version = require('../lib/cmds/version');
 if (options.main && options.main !== 'version') {
