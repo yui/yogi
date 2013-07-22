@@ -25,7 +25,7 @@
         "shifter": "~0.4.0",
         "portfinder": "~0.2.1",
         "echoecho": "~0.1.4",
-        "istanbul": "~0.1.10",
+        "istanbul": "0.1.37",
         "findit": "~0.1.2",
         "treeify": "~0.2.0",
         "yeti": "~0.2.23",
