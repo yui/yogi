@@ -3,7 +3,7 @@
     "apiDocs": "http://yuilibrary.com/yui/docs/api",
     "yuiBuildUrl": "build",
     "yuiLocalBuildUrl": "build",
-    "yuiVersion": "3.10.1",
+    "yuiVersion": "3.11.0",
     "yuiSeedUrl": "/yui/yui-min.js",
     "componentDefaults": {
         "yuiBuildUrl": "../",
