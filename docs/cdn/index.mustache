@@ -1,4 +1,3 @@
-
 <h2>getting started</h2>
 
 <p>
@@ -16,6 +15,38 @@ of a modules source directory.</p>
 
 <p>You can view the information about your module with: `yogi info` from inside of
 the modules source directory or `yogi info [modulename]`.</p>
+
+<p>For a newly submitted CDN request this should look something like:
+
+```terminal
+$ yogi info gallery-testmodule
+
+yogi [info]  using yogi@0.1.11 on node@0.8.9
+yogi [info]  showing info for gallery-testmodule
+yogi [warn]  this is a yogi only module and will be hidden from the site
+
+yogi [info]  verifying sha with github
+yogi [info]  good news! this sha is on github! that means this module "should" build for the cdn.
+
+   currently in the CDN Queue since Mon Aug 12 2013
+
+       stamp:      Mon Aug 12 2013 19:30:52 GMT+0100 (BST)
+       sha:        315b286e76511656dfc1776e6601ded802fb714e
+       repo:       git://github.com/davglass/testmodule.git
+       message:    add testmodule
+
+       clone this request:
+           git clone git://github.com/davglass/testmodule.git
+           cd gallery/src/gallery-testmodule
+           git checkout 315b286
+
+   next cdn deployment window is Wed Aug 21 2013 21:00:00 GMT+0100 (BST)
+
+yogi [warn]  yogi could not find any remote test data, has a CDN request been processed yet?
+
+
+```
+
 
 <h2>checking status</h2>
 
